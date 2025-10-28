@@ -565,7 +565,7 @@ generateButton.addEventListener("click", () => {
 
             ctx.fillText(subBumpNameInput.value, 1092, 1023);
 
-            if (bumpNewCheckbox.checked) {
+            if (subBumpNewCheckbox.checked) {
                 ctx.drawImage(ss_bump_new, 1092 + maxLength + 24, 1005);
             }
         } else {
