@@ -1,0 +1,30 @@
+textarea {
+  vertical-align: top;
+}
+
+canvas {
+    width: 100%;
+    height: auto;
+    background-color: lightgray;
+}
+
+#gauge-ability-container {
+    display: none;
+}
+
+#connect-skill-container {
+    display: none;
+}
+
+#shot-skill-container {
+    display: none;
+}
+
+#assist-skill-container {
+    display: none;
+}
+
+@font-face {
+    font-family: "M PLUS 2 Bold";
+    src: url("../fonts/MPLUS2-Bold.ttf");
+}

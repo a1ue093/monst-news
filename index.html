@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>モンストニュース ステータス画像ジェネレーター</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header><h1>モンストニュース ステータス画像ジェネレーター</h1></header>
+
+  <label>
+    属性:
+    <select id="element-select">
+      <option value="fire">火</option>
+      <option value="water">水</option>
+      <option value="wood">木</option>
+      <option value="light">光</option>
+      <option value="dark">闇</option>
+    </select>
+  </label><br>
+
+  <label>
+    進化形態:
+    <select id="form-select">
+      <option value="jushinka">獣神化</option>
+      <option value="kai">獣神化・改</option>
+      <option value="shin">真獣神化</option>
+    </select>
+  </label><br>
+
+  <label>
+    撃種:
+    <select id="type-select">
+      <option value="bounce">反射</option>
+      <option value="pierce">貫通</option>
+    </select>
+  </label><br>
+
+  <label>
+    ゲージ:
+    <input type="checkbox" id="gauge-checkbox">
+  </label><br>
+
+  <label>
+    種族:
+    <input type="text" id="species-input" placeholder="種族を入力">
+  </label><br>
+
+  <label>
+    戦型:
+    <select id="style-select">
+      <option value="balance">バランス型</option>
+      <option value="power">パワー型</option>
+      <option value="speed">スピード型</option>
+      <option value="bump">砲撃型</option>
+    </select>
+  </label><br>
+
+  <label>
+    ラックスキル:
+    <select id="luck-skill-select">
+      <option value="critical">クリティカル</option>
+      <option value="shield">シールド</option>
+      <option value="bump-critical">友情コンボクリティカル</option>
+      <option value="guide">ガイド</option>
+    </select>
+  </label><br><br>
+
+  <div id="ability-container">
+    アビリティ:<br>
+    <button id="ability-add-button">追加</button><br><br>
+  </div>
+
+  <div id="gauge-ability-container">
+    ゲージアビリティ:<br>
+    <button id="gauge-ability-add-button">追加</button><br><br>
+  </div>
+
+  <div id="connect-skill-container">
+    コネクトスキル<br>
+    <label>
+      内容:
+      <textarea type="text" id="connect-skill-content-input" placeholder="内容を入力"></textarea>
+    </label><br>
+    <label>
+      発動条件:
+      <textarea type="text" id="connect-skill-condition-input" placeholder="発動条件を入力"></textarea>
+    </label><br><br>
+  </div>
+
+  <label id="shot-skill-container">
+    ショットスキル:
+    <textarea type="text" id="shot-skill-input" placeholder="ショットスキルを入力"></textarea><br><br>
+  </label>
+
+  <label id="assist-skill-container">
+    アシストスキル:
+    <textarea type="text" id="assist-skill-input" placeholder="アシストスキルを入力"></textarea><br><br>
+  </label>
+
+  <div id="ss-container">
+    ストライクショット<br>
+    ターン数:
+    <input type="number" id="ss-turn-1st-input" min="1" step="1" placeholder="ターン数を入力">
+    +
+    <input type="number" id="ss-turn-2nd-input" min="1" step="1" placeholder="ターン数を入力"><br>
+    <label>
+      SS名:
+      <input type="text" id="ss-name-input" placeholder="SS名を入力">
+    </label><br>
+    <label>
+      SS説明文:
+      <textarea type="text" id="ss-description-input" placeholder="SS説明文を入力"></textarea>
+    </label><br>
+    <label>
+      NEW:
+      <input type="checkbox" id="ss-new-checkbox">
+    </label><br><br>
+  </div>
+
+  <div id="bump-container">
+    友情コンボ:
+    <select id="bump-element-select">
+      <option value="none">無属性</option>
+      <option value="all">全属性</option>
+      <option value="fire">火属性</option>
+      <option value="water">水属性</option>
+      <option value="wood">木属性</option>
+      <option value="light">光属性</option>
+      <option value="dark">闇属性</option>
+    </select>
+    <input type="text" id="bump-name-input" placeholder="友情コンボ名を入力">
+    <label>
+      NEW:
+      <input type="checkbox" id="bump-new-checkbox">
+    </label><br>
+    副友情コンボ:
+    <select id="sub-bump-element-select">
+      <option value="none">無属性</option>
+      <option value="all">全属性</option>
+      <option value="fire">火属性</option>
+      <option value="water">水属性</option>
+      <option value="wood">木属性</option>
+      <option value="light">光属性</option>
+      <option value="dark">闇属性</option>
+    </select>
+    <input type="text" id="sub-bump-name-input" placeholder="副友情コンボ名を入力">
+    <label>
+      NEW:
+      <input type="checkbox" id="sub-bump-new-checkbox">
+    </label><br><br>
+  </div>
+  
+  <button id="generate-button">生成</button><br><br>
+
+  <canvas id="canvas" width="1920" height="1080"></canvas><br><br>
+
+  <button id="download-button">ダウンロード</button>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
