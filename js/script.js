@@ -507,7 +507,7 @@ generateButton.addEventListener("click", () => {
             ctx.font = '40px "M PLUS 2 Bold"';
             ctx.fillStyle = "#282828";
 
-            const maxLength = Math.max(ctx.measureText(bumpNameInput.value).width, ctx.measureText(subBumpNameInput.value).width);
+            const maxLength = Math.max(ctx.measureText(bumpNameInput.value).width * (bumpNewCheckbox.checked ? 1 : 0), ctx.measureText(subBumpNameInput.value).width * (subBumpNewCheckbox.checked ? 1 : 0));
 
             switch (bumpElementSelect.value) {
                 case "none":
@@ -574,7 +574,7 @@ generateButton.addEventListener("click", () => {
             ctx.font = '40px "M PLUS 2 Bold"';
             ctx.fillStyle = "#282828";
 
-            const maxLength = Math.max(ctx.measureText(bumpNameInput.value).width, ctx.measureText(subBumpNameInput.value).width);
+            const maxLength = Math.max(ctx.measureText(bumpNameInput.value).width  * (bumpNewCheckbox.checked ? 1 : 0), ctx.measureText(subBumpNameInput.value).width * (subBumpNewCheckbox.checked ? 1 : 0));
 
             switch (bumpElementSelect.value) {
                 case "none":
