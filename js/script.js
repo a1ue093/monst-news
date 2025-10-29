@@ -338,7 +338,7 @@ generateButton.addEventListener("click", () => {
 
             if (formSelect.value === "kai" || formSelect.value === "shin") {
                 if (abilities.length + gaugeAbilities.length < 3) {
-                    const width = 1216, height = (360 - 10 * ((abilities.length + gaugeAbilities.length) - 1)) / (abilities.length + gaugeAbilities.length);
+                    const width = 1216, height = Math.floor((360 - 10 * ((abilities.length + gaugeAbilities.length) - 1)) / (abilities.length + gaugeAbilities.length));
 
                     for (let i = 0; i < abilities.length; i++) {
                         const x = 680, y = 25 + (height + 10) * i;
@@ -365,7 +365,7 @@ generateButton.addEventListener("click", () => {
                         ctx.fillText(gaugeAbilities[i], x + (width / 2) + (68 + 14) / 2, y + (height / 2));
                     }
                 } else {
-                    const width = 602.5, height = (360 - 10 * ((Math.ceil(abilities.length / 2) + Math.ceil(gaugeAbilities.length / 2)) - 1)) / (Math.ceil(abilities.length / 2) + Math.ceil(gaugeAbilities.length / 2));
+                    const width = 602, height = Math.floor((360 - 10 * ((Math.ceil(abilities.length / 2) + Math.ceil(gaugeAbilities.length / 2)) - 1)) / (Math.ceil(abilities.length / 2) + Math.ceil(gaugeAbilities.length / 2)));
 
                     for (let i = 0; i < abilities.length; i++) {
                         const x = 680 + (width + 11) * (i % 2), y = 25 + (height + 10) * Math.floor(i / 2);
@@ -395,7 +395,7 @@ generateButton.addEventListener("click", () => {
                 }
             } else {
                 if (abilities.length + gaugeAbilities.length < 3) {
-                    const width = 1216, height = (484 - 14 * ((abilities.length + gaugeAbilities.length) - 1)) / (abilities.length + gaugeAbilities.length);
+                    const width = 1216, height = Math.floor((484 - 14 * ((abilities.length + gaugeAbilities.length) - 1)) / (abilities.length + gaugeAbilities.length));
 
                     for (let i = 0; i < abilities.length; i++) {
                         const x = 680, y = 25 + (height + 14) * i;
@@ -422,7 +422,7 @@ generateButton.addEventListener("click", () => {
                         ctx.fillText(gaugeAbilities[i], x + (width / 2) + (68 + 14) / 2, y + (height / 2));
                     }
                 } else {
-                    const width = 602.5, height = (484 - 14 * ((Math.ceil(abilities.length / 2) + Math.ceil(gaugeAbilities.length / 2)) - 1)) / (Math.ceil(abilities.length / 2) + Math.ceil(gaugeAbilities.length / 2));
+                    const width = 602, height = Math.floor((484 - 14 * ((Math.ceil(abilities.length / 2) + Math.ceil(gaugeAbilities.length / 2)) - 1)) / (Math.ceil(abilities.length / 2) + Math.ceil(gaugeAbilities.length / 2)));
 
                     for (let i = 0; i < abilities.length; i++) {
                         const x = 680 + (width + 11) * (i % 2), y = 25 + (height + 14) * Math.floor(i / 2);
