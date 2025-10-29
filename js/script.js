@@ -672,15 +672,35 @@ function draw9Slice(ctx, img, x, y, width, height, left, top, right, bottom) {
     ctx.drawImage(img, sw - right, sh - bottom, right, bottom, x + width - right, y + height - bottom, right, bottom);
 }
 
-const downloadButton = document.getElementById("download-button");
+const saveButton = document.getElementById("save-button");
 
 let isDrawn = false;
 
-downloadButton.addEventListener("click", () => {
+const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+
+saveButton.addEventListener("click", async () => {
     if (isDrawn) {
-        const link = document.createElement("a");
-        link.download = "status.png";
-        link.href = canvas.toDataURL("image/png");
-        link.click();
+        canvas.toBlob(async (blob) => {
+            if (!blob) {
+                return;
+            }
+
+            const file = new File([blob], "status.png", { type: "image/png" });
+
+            if (isMobile && navigator.canShare && navigator.canShare({ files: [file] })) {
+                try {
+                    await navigator.share({
+                    files: [file]
+                    });
+                } catch {}
+            } else {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'status.png';
+                a.click();
+                URL.revokeObjectURL(url); 
+            }
+        }, "image/png");
     }
 });
